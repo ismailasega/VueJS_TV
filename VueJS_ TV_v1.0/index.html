@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <title>Vue-JS TV</title>
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css" />
+</head>
+
+<style>
+    body {
+        width: 500px;
+        margin: auto;
+        margin-top: 50px;
+    }
+
+    div {
+        width: 615px;
+        height: 350px;
+        background-color: rgb(1, 19, 19);
+        padding: 10px;
+    }
+
+    button{
+        padding: 10px;
+    }
+
+    #container {
+        width: 575px;
+        height: 280px;
+        background-color: white;
+        margin: 10px;
+        padding: 0px;
+    }
+
+    h1{
+        position: absolute;
+    }
+
+    .btn {
+        height: 30px;
+        font-size: 13px;
+    }
+
+    .btn1{
+        float:right;
+        margin-right: 10px;
+        border: 1px solid white;
+        color: white;
+        border-radius: 50px 50px 50px 50px;
+    }
+    .btn2{
+        float:left;
+        background: black;
+        border: 1px solid white;
+        color: white;
+        border-radius: 50px 50px 50px 50px;
+    }
+
+    p{
+        text-align: center;
+        color: floralwhite;
+        font-size: 13px;
+        padding-top: 10px;
+    }
+</style>
+
+<body>
+    <div id="tv">
+        <div id="container">
+            <h1 v-if="signal">
+                <img src="station1.gif" width="575px" height="280px">
+            </h1>
+            <h1 v-else>
+                <img src="station3.gif" width="575px" height="280px">
+            </h1>
+
+            <h1 v-if="power"> 
+                <img src="tvoff.png" width="575px" height="280px">
+            </h1> 
+             
+        </div>
+        <button v-on:click="toggle" class="btn btn2 d-flex mx-auto" type="button" >
+            -p Channel +p
+        </button>
+        <button v-on:click="togglePower" class="btn btn1 btn-danger d-xl-flex mx-auto " type="button">
+            On / Off
+        </button>
+        <p>iTV</p> 
+    </div>
+<script src=./js/vue.js></script>
+<script src=./js/custom.js></script>
+
+</body>
+
+</html>
